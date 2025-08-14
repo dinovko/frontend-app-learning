@@ -48,8 +48,6 @@ const Home = () => {
     return <>Загрузка</>;
   }
 
-  console.info(JSON.stringify(a));
-
   const {
     resumeCourse: { hasVisitedCourse, url: resumeCourseUrl },
     welcomeMessageHtml,

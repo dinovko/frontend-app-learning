@@ -1,155 +1,163 @@
-/* Header.scss */
+.container {
+  background-color: rgba(21, 23, 30, 1);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-.header-container {
-  /* Group 33829 - Main container */
-  position: relative;
-  width: 1920px;
-  height: 48px;
-  
-  .background-rect {
-    /* Rectangle 813 - Background */
-    position: absolute;
-    width: 1920px;
-    height: 48px;
-    left: 0px;
-    top: 0px;
-    background: linear-gradient(0deg, #15171E, #15171E), #F6F6F6;
-  }
-  
-  .language-selector {
-    /* Language text: Каз Рус Eng */
-    position: absolute;
-    width: 83px;
-    height: 15px;
-    left: 1449px;
-    top: 17px;
-    
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 15px;
-    text-align: right;
-    color: #64656B;
-  }
-  
-  .content-group {
-    /* Group 33827 - Main content area */
-    position: absolute;
-    width: 1390.99px;
-    height: 30px;
-    left: 265.01px;
-    top: 8px;
-    
-    .logo-vector {
-      /* Vector - Logo element */
-      box-sizing: border-box;
-      position: absolute;
-      width: 71.1px;
-      height: 19.23px;
-      left: 0px; // Relative to parent
-      top: 6.55px; // Adjusted relative to parent (14.55 - 8)
-      background: #FFFFFF;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    min-width: 300px;
+
+    .user-controls {
+      position: relative;
+      
+      .dropdown-menu-1 {
+        position: absolute;
+        top: 55px;
+        right: 0px;
+        background: #2c3e50;
+        border-radius: 8px;
+        padding: 10px 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 9999;
+
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          li {
+            padding: 10px 20px;
+
+            a {
+              color: #fff;
+              text-decoration: none;
+              font-size: 14px;
+              display: block;
+            }
+
+            &:hover {
+              background: #34495e;
+            }
+          }
+        }
+      }
     }
-  }
-  
-  .profile-circle {
-    /* Ellipse - Profile picture placeholder */
-    box-sizing: border-box;
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    left: 1595px;
-    top: 8px;
-    // background-image: url(); // Add actual image URL here
-    background-size: cover;
-    background-position: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-  }
-  
-  .menu-group {
-    /* Group 33775 - Hamburger menu */
-    position: absolute;
-    width: 14px;
-    height: 12px;
-    left: 1642px;
-    top: 18px;
-    
+
+    .language-switcher {
+      font-family: Inter;
+      font-weight: 600;
+      font-style: Semi Bold;
+      font-size: 12px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      text-align: right;
+
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .lang-link {
+      color: #7f8c8d;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .lang-link:hover {
+      color: #bdc3c7;
+    }
+
+    .lang-link.active {
+      color: #ffffff;
+      border-bottom: 2px solid #ffffff;
+      padding-bottom: 2px;
+    }
+
+    .user-controls {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .user-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      //   background: linear-gradient(135deg, #f39c12, #e67e22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      position: relative;
+      img {
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    .user-avatar:hover {
+      transform: scale(1.05);
+    }
+
+    .avatar-icon {
+      width: 24px;
+      height: 24px;
+      background-color: #8b4513;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .avatar-icon::before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      background-color: #d2691e;
+      border-radius: 50%;
+    }
+
+    .menu-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: opacity 0.2s ease;
+    }
+
+    .menu-button:hover {
+      opacity: 0.8;
+    }
+
     .menu-line {
-      box-sizing: border-box;
-      position: absolute;
-      width: 14px; // Changed from 2px to make it visible
-      height: 2px;
-      background: #FFFFFF;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      
-      &.menu-line-1 {
-        /* Rectangle 807 */
-        left: 0px;
-        top: 0px;
-      }
-      
-      &.menu-line-2 {
-        /* Rectangle 808 */
-        left: 0px;
-        top: 5px;
-      }
-      
-      &.menu-line-3 {
-        /* Rectangle 809 */
-        left: 0px;
-        top: 10px;
-      }
+      width: 28px;
+      height: 3px;
+      background-color: #ffffff;
+      border-radius: 2px;
+      transition: all 0.3s ease;
     }
-  }
-}
 
-// Responsive adjustments
-@media (max-width: 1920px) {
-  .header-container {
-    width: 100%;
-    
-    .background-rect {
-      width: 100%;
+    .menu-button.active .menu-line:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
     }
-    
-    .language-selector {
-      right: 388px; // Maintain right spacing instead of fixed left
-      left: auto;
-    }
-    
-    .profile-circle {
-      right: 295px; // Maintain right spacing
-      left: auto;
-    }
-    
-    .menu-group {
-      right: 264px; // Maintain right spacing
-      left: auto;
-    }
-  }
-}
 
-@media (max-width: 768px) {
-  .header-container {
-    .content-group {
-      left: 20px;
-      width: calc(100% - 200px);
+    .menu-button.active .menu-line:nth-child(2) {
+      opacity: 0;
     }
-    
-    .language-selector {
-      right: 120px;
-      width: auto;
-    }
-    
-    .profile-circle {
-      right: 80px;
-    }
-    
-    .menu-group {
-      right: 20px;
+
+    .menu-button.active .menu-line:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
     }
   }
 }

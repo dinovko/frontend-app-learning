@@ -45,7 +45,7 @@ import PreferencesUnsubscribe from "./preferences-unsubscribe";
 import PageNotFound from "./generic/PageNotFound";
 import Home from "./custom/Home";
 import CardGroup from "./custom/CardGroup";
-import Header from "custom/Header";
+import Header from "./custom/Header";
 import Breadcrumbs from "custom/Breadcrumbs";
 
 subscribe(APP_READY, () => {
@@ -116,7 +116,9 @@ subscribe(APP_READY, () => {
                           gap: "1.5rem",
                         }}
                       >
-                        <Header />
+                        <div style={{ backgroundColor: "rgba(21, 23, 30, 1)" }}>
+                          <Header />
+                        </div>
                         <div
                           style={{
                             display: "flex",
@@ -125,8 +127,8 @@ subscribe(APP_READY, () => {
                             width: "100%",
                             maxWidth: "1400px",
                             // border: "1px solid red",
-                            margin:"auto",
-                            gap:"100px"
+                            margin: "auto",
+                            gap: "100px",
                           }}
                         >
                           <Breadcrumbs />
