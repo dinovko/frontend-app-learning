@@ -45,6 +45,8 @@ import PreferencesUnsubscribe from "./preferences-unsubscribe";
 import PageNotFound from "./generic/PageNotFound";
 import Home from "./custom/Home";
 import CardGroup from "./custom/CardGroup";
+import Header from "custom/Header";
+import Breadcrumbs from "custom/Breadcrumbs";
 
 subscribe(APP_READY, () => {
   const root = createRoot(document.getElementById("root"));
@@ -107,8 +109,27 @@ subscribe(APP_READY, () => {
                   <Route
                     path={DECODE_ROUTES.HOME}
                     element={
-                      <div style={{ display: "flex", flexDirection: "column" }}>
-                        <div style={{ display: "flex" }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "1.5rem",
+                        }}
+                      >
+                        <Header />
+                        <div
+                          style={{
+                            display: "flex",
+                            alignItems: "flex-start",
+                            flexDirection: "column",
+                            width: "100%",
+                            maxWidth: "1400px",
+                            // border: "1px solid red",
+                            margin:"auto",
+                            gap:"100px"
+                          }}
+                        >
+                          <Breadcrumbs />
                           <Home />
                         </div>
                         <div style={{ display: "flex" }}>

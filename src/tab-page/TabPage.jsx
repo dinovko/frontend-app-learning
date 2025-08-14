@@ -71,9 +71,9 @@ const TabPage = (props) => {
         <PageLoading srMessage={intl.formatMessage(messages.loading)} />
       )}
 
-      {['loaded', 'denied'].includes(courseStatus) && (
+      {/* {['loaded', 'denied'].includes(courseStatus) && (
         <LoadedTabPage {...props} />
-      )}
+      )} */}
 
       {/* courseStatus 'failed' and any other unexpected course status. */}
       {(!['loading', 'loaded', 'denied'].includes(courseStatus)) && (
@@ -81,7 +81,7 @@ const TabPage = (props) => {
           {intl.formatMessage(messages.failure)}
         </p>
       )}
-      <FooterSlot />
+      {/* <FooterSlot /> */}
     </>
   );
 };

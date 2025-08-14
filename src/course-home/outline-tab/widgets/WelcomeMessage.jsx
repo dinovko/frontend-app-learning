@@ -43,6 +43,8 @@ const WelcomeMessage = ({ courseId, nextElementRef }) => {
     return null;
   }
 
+  console.info(cleanedWelcomeMessageHtml)
+
   return (
     <Alert
       data-testid="alert-container-welcome"

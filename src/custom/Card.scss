@@ -1,16 +1,37 @@
 .card-group-wrapper {
   position: relative;
-  left: 50%;
-  right: 50%;
+  left: 49%;
+  right: 49%;
   margin-left: -50vw;
   margin-right: -50vw;
   width: 100vw;
   background-color: rgba(245, 245, 247, 1);
   padding: 30px 0;
   overflow-x: hidden;
+  overflow-y: hidden;
   box-sizing: border-box;
 
   height: 484px;
+
+  .scroll-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 25%;
+
+    .scroll-btn-left {
+      padding: 8px;
+      // background-color: rgba(217, 217, 217, 0.8);
+      border: none;
+      border-radius: 16px;
+    }
+    .scroll-btn-right {
+      padding: 8px;
+      // background-color: rgba(217, 217, 217, 0.8);
+      border: none;
+      border-radius: 16px;
+    }
+  }
 
   .card-group {
     width: 1400px;
@@ -19,15 +40,47 @@
     max-height: 400px;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: row;
     align-items: center;
     gap: 16px;
     margin: auto;
-    overflow-x: scroll;
+    overflow-x: hidden;
     overflow-y: hidden;
     //   left: calc(50% - 1400px/2 + 223px);
     //   top: 0px;
+
+    .cards-block {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .root-card {
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      width: 100%;
+      min-width: 235px;
+      height: 100%;
+      opacity: 1;
+      left: 277px;
+      border-radius: 14px;
+      border-width: 1px;
+      padding: 20px;
+      gap: 6px;
+      margin: 0 3rem;
+    }
+
+    .card-child-wrapper {
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      width: 100%;
+      min-width: 235px;
+      height: 174px;
+      opacity: 1;
+      left: 277px;
+      border-radius: 14px;
+      border-width: 1px;
+      padding: 20px;
+      gap: 6px;
+    }
 
     .card {
       box-sizing: border-box;

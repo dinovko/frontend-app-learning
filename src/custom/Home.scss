@@ -1,143 +1,114 @@
 // FinancialCourse.scss
-.financial-course {
-//   position: relative;
+.content {
+  display: flex;
+  flex-direction: row;
+  height: auto;
   width: 100%;
-  max-width: 1333px;
-  height: 364px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 262px 1fr 225px;
-  grid-template-areas: "image content sidebar";
-  gap: 45px;
-  padding: 0 40px;
+  max-width: 1400px;
+  gap: 2rem;
 
-  // Course Image
-  .course-image {
-    grid-area: image;
-    width: 262px;
-    height: 364px;
-    border-radius: 30px;
-    overflow: hidden;
-
-    .image-placeholder {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      border-radius: 30px;
-      
-      // If you have the actual image, replace with:
-      // background: url('./assets/ChatGPT Image 13 июл. 2025 г., 13_28_45.png');
-      // background-size: cover;
-      // background-position: center;
-    }
-  }
-
-  // Main Content Area
-  .course-content {
-    grid-area: content;
+  .first-column {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 10px;
+    width: 80%;
 
-    .course-category {
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 22px;
-      color: #000000;
-      margin-bottom: 8px;
+    .wellcome-message {
+      border: 1px sold red;
     }
-
-    .course-title {
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 28px;
-      line-height: 34px;
-      color: #000000;
-      margin: 0 0 40px 0;
-      max-width: 567px;
-    }
-
-    .course-goal {
-      margin-bottom: 40px;
-
-      .goal-title {
-        font-family: 'Inter', sans-serif;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 22px;
-        color: #000000;
-        margin: 0 0 16px 0;
-      }
-
-      .goal-description {
-        font-family: 'Inter', sans-serif;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 22px;
-        color: rgba(0, 0, 0, 0.5);
-        margin: 0;
-        max-width: 659px;
-      }
-    }
-
-    .start-button {
+    .buttons {
+      position: relative;
+      top: -100px;
+      left: 25%;
+      max-width: 65%;
       display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding: 18px 28px;
-      gap: 10px;
-      width: 159px;
-      height: 65px;
-      background: #007AFF;
-      border-radius: 40px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
+      justify-content: space-between;
+      .start-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 18px 28px;
+        gap: 10px;
+        width: 159px;
+        height: 65px;
+        background: #007aff;
+        border-radius: 40px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
 
-      &:hover {
-        background: #0056CC;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+        &:hover {
+          background: #0056cc;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+
+        span {
+          font-family: "Inter", sans-serif;
+          font-weight: 700;
+          font-size: 1rem;
+          line-height: 29px;
+          color: #ffffff;
+        }
+
+        .arrow-icon {
+          width: 6px;
+          height: 12px;
+          border-right: 3px solid #ffffff;
+          border-top: 3px solid #ffffff;
+          transform: rotate(45deg);
+        }
       }
 
-      &:active {
-        transform: translateY(0);
-      }
-
-      span {
-        font-family: 'Inter', sans-serif;
+      .ai-button {
+        width: 385px;
+        height: 58px;
+        opacity: 1;
+        border-radius: 14px;
+        gap: 24px;
+        padding-top: 4px;
+        padding-right: 20px;
+        padding-bottom: 4px;
+        padding-left: 20px;
+        border: none;
+        font-family: Inter;
         font-weight: 700;
-        font-size: 24px;
-        line-height: 29px;
-        color: #FFFFFF;
-      }
+        font-style: Bold;
+        font-size: 15px;
+        line-height: 100%;
+        letter-spacing: 0%;
 
-      .arrow-icon {
-        width: 6px;
-        height: 12px;
-        border-right: 3px solid #FFFFFF;
-        border-top: 3px solid #FFFFFF;
-        transform: rotate(45deg);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        &:hover {
+          background: #b5b3b3;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+        }
+
+        .ai-icon {
+          width: 50px;
+          height: 50px;
+          background-image: url("../../public/static/ai_icon.png");
+        }
       }
     }
   }
 
-  // Sidebar with logos
-  .sidebar {
-    grid-area: sidebar;
-    display: flex;
-    flex-direction: column;
-    gap: 37px;
-    padding-top: 4px;
-
+  .second-column {
+    width: 15%;
     .national-bank {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
+      gap: 1rem;
 
       .bank-logo {
         width: 61px;
@@ -145,7 +116,8 @@
         margin-bottom: 9px;
         background: #f0f0f0;
         border-radius: 50%;
-        
+        background-image: url("../../public//static/National_Bank_of_Kazakhstan_logo.svg\ 1.png");
+
         // Replace with actual logo:
         // background: url('./assets/National_Bank_of_Kazakhstan_logo.svg');
         // background-size: contain;
@@ -154,7 +126,7 @@
       }
 
       .bank-text {
-        font-family: 'Inter', sans-serif;
+        font-family: "Inter", sans-serif;
         font-weight: 500;
         font-size: 12px;
         line-height: 15px;
@@ -173,14 +145,16 @@
       .orleu-logo {
         width: 85px;
         height: 23px;
-        background: #2565DB;
         border: 1px solid rgba(255, 255, 255, 0.1);
         margin-bottom: 25px;
+        margin-top: 25px;
         border-radius: 4px;
+        background-color: white;
+        background-image: url("../../public/static/ORLEU_Icon_blue.svg");
       }
 
       .orleu-text {
-        font-family: 'Inter', sans-serif;
+        font-family: "Inter", sans-serif;
         font-weight: 500;
         font-size: 12px;
         line-height: 15px;
@@ -189,6 +163,101 @@
         max-width: 225px;
       }
     }
+  }
+}
+.financial-course {
+  //   position: relative;
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 90px;
+
+  // Course Image
+  .course-image {
+    width: 100%;
+    min-width: 262px;
+    max-width: 262px;
+    height: 364px;
+    opacity: 1;
+    border-radius: 30px;
+
+    grid-area: image;
+    border-radius: 30px;
+    overflow: hidden;
+
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 30px;
+    }
+  }
+
+  // Main Content Area
+  .course-content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 10px;
+    // max-width: 1000px;
+    max-height: 200px;
+
+    .course-category {
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      color: #000000;
+      margin-bottom: 8px;
+    }
+
+    .course-title {
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 34px;
+      color: #000000;
+      margin: 0 0 40px 0;
+      max-width: 567px;
+    }
+
+    .course-goal {
+      margin-bottom: 40px;
+
+      .goal-title {
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        color: #000000;
+        margin: 0 0 16px 0;
+      }
+
+      .goal-description {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: rgba(0, 0, 0, 0.5);
+        margin: 0;
+        max-width: 659px;
+      }
+    }
+  }
+
+  // Sidebar with logos
+  .sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+    padding-top: 4px;
+    box-shadow: none;
   }
 }
 
@@ -204,7 +273,7 @@
 @media (max-width: 1024px) {
   .financial-course {
     grid-template-columns: 1fr;
-    grid-template-areas: 
+    grid-template-areas:
       "image"
       "content"
       "sidebar";

@@ -117,77 +117,77 @@ const OutlineTab = () => {
   }, [location.search]);
 
   return (
-    <>
-      <div data-learner-type={learnerType} className="row w-100 mx-0 my-3 justify-content-between">
-        <div className="col-12 col-sm-auto p-0">
-          <div role="heading" aria-level="1" className="h2">{title}</div>
-        </div>
-      </div>
-      <div className="row course-outline-tab">
-        <AccountActivationAlert />
-        <div className="col-12">
-          <AlertList
-            topic="outline-private-alerts"
-            customAlerts={{
-              ...privateCourseAlert,
-            }}
-          />
-        </div>
-        <div className="col col-12 col-md-8">
-          <AlertList
-            topic="outline-course-alerts"
-            className="mb-3"
-            customAlerts={{
-              ...certificateAvailableAlert,
-              ...courseEndAlert,
-              ...courseStartAlert,
-              ...scheduledContentAlert,
-            }}
-          />
-          {isSelfPaced && hasDeadlines && (
-            <>
-              <ShiftDatesAlert model="outline" fetch={fetchOutlineTab} />
-              <UpgradeToShiftDatesAlert model="outline" logUpgradeLinkClick={logUpgradeToShiftDatesLinkClick} />
-            </>
-          )}
-          <StartOrResumeCourseCard />
-          <WelcomeMessage courseId={courseId} nextElementRef={expandButtonRef} />
-          {rootCourseId && (
-            <>
-              <div id="expand-button-row" className="row w-100 m-0 mb-3 justify-content-end">
-                <div className="col-12 col-md-auto p-0">
-                  <Button ref={expandButtonRef} variant="outline-primary" block onClick={() => { setExpandAll(!expandAll); }}>
-                    {expandAll ? intl.formatMessage(messages.collapseAll) : intl.formatMessage(messages.expandAll)}
-                  </Button>
-                </div>
-              </div>
-              <CourseHomeSectionOutlineSlot
-                expandAll={expandAll}
-                sectionIds={courses[rootCourseId].sectionIds}
-                sections={sections}
-              />
-            </>
-          )}
-        </div>
-        {rootCourseId && (
-          <div className="col col-12 col-md-4">
-            <ProctoringInfoPanel />
-            { /** Defer showing the goal widget until the ProctoringInfoPanel has resolved or has been determined as
-             disabled to avoid components bouncing around too much as screen is rendered */ }
-            {(!enableProctoredExams || proctoringPanelStatus === 'loaded') && weeklyLearningGoalEnabled && (
-              <WeeklyLearningGoalCard
-                daysPerWeek={selectedGoal && 'daysPerWeek' in selectedGoal ? selectedGoal.daysPerWeek : null}
-                subscribedToReminders={selectedGoal && 'subscribedToReminders' in selectedGoal ? selectedGoal.subscribedToReminders : false}
-              />
-            )}
-            <CourseTools />
-            <CourseOutlineTabNotificationsSlot courseId={courseId} />
-            <CourseDates />
-            <CourseHandouts />
-          </div>
-        )}
-      </div>
-    </>
+    <></>
+    //   <div data-learner-type={learnerType} className="row w-100 mx-0 my-3 justify-content-between">
+    //     <div className="col-12 col-sm-auto p-0">
+    //       <div role="heading" aria-level="1" className="h2">{title}</div>
+    //     </div>
+    //   </div>
+    //   <div className="row course-outline-tab">
+    //     <AccountActivationAlert />
+    //     <div className="col-12">
+    //       <AlertList
+    //         topic="outline-private-alerts"
+    //         customAlerts={{
+    //           ...privateCourseAlert,
+    //         }}
+    //       />
+    //     </div>
+    //     <div className="col col-12 col-md-8">
+    //       <AlertList
+    //         topic="outline-course-alerts"
+    //         className="mb-3"
+    //         customAlerts={{
+    //           ...certificateAvailableAlert,
+    //           ...courseEndAlert,
+    //           ...courseStartAlert,
+    //           ...scheduledContentAlert,
+    //         }}
+    //       />
+    //       {isSelfPaced && hasDeadlines && (
+    //         <>
+    //           <ShiftDatesAlert model="outline" fetch={fetchOutlineTab} />
+    //           <UpgradeToShiftDatesAlert model="outline" logUpgradeLinkClick={logUpgradeToShiftDatesLinkClick} />
+    //         </>
+    //       )}
+    //       <StartOrResumeCourseCard />
+    //       <WelcomeMessage courseId={courseId} nextElementRef={expandButtonRef} />
+    //       {rootCourseId && (
+    //         <>
+    //           <div id="expand-button-row" className="row w-100 m-0 mb-3 justify-content-end">
+    //             <div className="col-12 col-md-auto p-0">
+    //               <Button ref={expandButtonRef} variant="outline-primary" block onClick={() => { setExpandAll(!expandAll); }}>
+    //                 {expandAll ? intl.formatMessage(messages.collapseAll) : intl.formatMessage(messages.expandAll)}
+    //               </Button>
+    //             </div>
+    //           </div>
+    //           <CourseHomeSectionOutlineSlot
+    //             expandAll={expandAll}
+    //             sectionIds={courses[rootCourseId].sectionIds}
+    //             sections={sections}
+    //           />
+    //         </>
+    //       )}
+    //     </div>
+    //     {rootCourseId && (
+    //       <div className="col col-12 col-md-4">
+    //         <ProctoringInfoPanel />
+    //         { /** Defer showing the goal widget until the ProctoringInfoPanel has resolved or has been determined as
+    //          disabled to avoid components bouncing around too much as screen is rendered */ }
+    //         {(!enableProctoredExams || proctoringPanelStatus === 'loaded') && weeklyLearningGoalEnabled && (
+    //           <WeeklyLearningGoalCard
+    //             daysPerWeek={selectedGoal && 'daysPerWeek' in selectedGoal ? selectedGoal.daysPerWeek : null}
+    //             subscribedToReminders={selectedGoal && 'subscribedToReminders' in selectedGoal ? selectedGoal.subscribedToReminders : false}
+    //           />
+    //         )}
+    //         <CourseTools />
+    //         <CourseOutlineTabNotificationsSlot courseId={courseId} />
+    //         <CourseDates />
+    //         <CourseHandouts />
+    //       </div>
+    //     )}
+    //   </div>
+    // </>
   );
 };
 
