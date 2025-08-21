@@ -36,6 +36,8 @@ import DecodePageRoute from './decode-page-route';
 import { DECODE_ROUTES, ROUTES } from './constants';
 import PreferencesUnsubscribe from './preferences-unsubscribe';
 import PageNotFound from './generic/PageNotFound';
+import OrleuHeader from './components/OrleuHeader';
+import Breadcrumbs from './components/Breadcrumbs';
 
 subscribe(APP_READY, () => {
   const root = createRoot(document.getElementById('root'));
@@ -68,6 +70,8 @@ subscribe(APP_READY, () => {
                     path={DECODE_ROUTES.HOME}
                     element={(
                       <DecodePageRoute>
+                        <OrleuHeader />
+                        <Breadcrumbs />
                         <TabContainer tab="outline" fetch={fetchOutlineTab} slice="courseHome">
                           <OutlineTab />
                         </TabContainer>

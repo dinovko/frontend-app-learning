@@ -42,13 +42,12 @@ const WelcomeMessage = ({ courseId, nextElementRef }) => {
   if (!welcomeMessageHtml) {
     return null;
   }
-
   return (
     <Alert
       data-testid="alert-container-welcome"
       variant="light"
       stacked
-      dismissible
+      // dismissible
       show={display}
       onClose={() => {
         nextElementRef.current?.focus();

@@ -35,7 +35,20 @@ const SectionTitle: React.FC<Props> = ({ complete, hideFromTOC, title }) => {
         )}
       </div>
       <div className="col-7 ml-3 p-0 font-weight-bold text-dark-500">
-        <span className="align-middle col-6">{title}</span>
+        <span 
+          className="align-middle col-6"
+          style={{
+            fontFamily: 'Inter',
+            fontWeight: 600,
+            fontStyle: 'normal',
+            fontSize: '18px',
+            lineHeight: '100%',
+            letterSpacing: '0%',
+            color: 'rgba(0, 0, 0, 1)'
+          }}
+        >
+          {title}
+        </span>
         <span className="sr-only">
           , {intl.formatMessage(complete ? messages.completedSection : messages.incompleteSection)}
         </span>

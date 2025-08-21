@@ -156,8 +156,53 @@ const OutlineTab = () => {
             <>
               <div id="expand-button-row" className="row w-100 m-0 mb-3 justify-content-end">
                 <div className="col-12 col-md-auto p-0">
-                  <Button ref={expandButtonRef} variant="outline-primary" block onClick={() => { setExpandAll(!expandAll); }}>
-                    {expandAll ? intl.formatMessage(messages.collapseAll) : intl.formatMessage(messages.expandAll)}
+                  <Button 
+                    ref={expandButtonRef} 
+                    variant="outline-primary" 
+                    className="d-flex align-items-center justify-content-center px-3 py-2"
+                    style={{
+                      background: '#F5F5F7',
+                      border: '1px solid #E8E8E8',
+                      borderRadius: '6px',
+                      fontFamily: 'Inter',
+                      fontWeight: 600,
+                      fontSize: '14px',
+                      lineHeight: '17px',
+                      color: '#000000',
+                      minWidth: '147px',
+                      height: '34px'
+                    }}
+                    onClick={() => { setExpandAll(!expandAll); }}
+                  >
+                    <span className="me-2">
+                      {/* {expandAll ? intl.formatMessage(messages.collapseAll) : intl.formatMessage(messages.expandAll)} */}
+                      {expandAll ? 'Свернуть все' : 'Развернуть все'}
+                    </span>
+                    <div 
+                      className="d-flex align-items-center justify-content-center"
+                      style={{
+                        width: '16px',
+                        height: '16px',
+                        transition: 'transform 0.3s ease',
+                        transform: expandAll ? 'rotate(270deg)' : 'rotate(90deg)'
+                      }}
+                    >
+                      <svg 
+                        width="12" 
+                        height="12" 
+                        viewBox="0 0 12 12" 
+                        fill="none" 
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path 
+                          d="M4.5 3L7.5 6L4.5 9" 
+                          stroke="#0D81FF" 
+                          strokeWidth="1.5" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
                   </Button>
                 </div>
               </div>
@@ -183,7 +228,7 @@ const OutlineTab = () => {
             <CourseTools />
             <CourseOutlineTabNotificationsSlot courseId={courseId} />
             <CourseDates />
-            <CourseHandouts />
+            {/* <CourseHandouts /> */}
           </div>
         )}
       </div>

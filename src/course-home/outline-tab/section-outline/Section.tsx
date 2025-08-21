@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useIntl } from '@edx/frontend-platform/i18n';
-import { Collapsible, IconButton } from '@openedx/paragon';
+import { IconButton } from '@openedx/paragon';
 import { Minus, Plus } from '@openedx/paragon/icons';
 
 import { useModel } from '../../../generic/model-store';
@@ -53,40 +53,64 @@ const Section: React.FC<Props> = ({
 
   return (
     <li>
-      <Collapsible
-        className="mb-2"
-        styling="card-lg"
-        title={<SectionTitle {...{ complete, hideFromTOC, title }} />}
-        open={open}
-        onToggle={() => { setOpen(!open); }}
-        iconWhenClosed={(
-          <IconButton
-            alt={intl.formatMessage(messages.openSection)}
-            iconAs={Plus}
-            onClick={() => { setOpen(true); }}
-            size="sm"
-          />
-        )}
-        iconWhenOpen={(
-          <IconButton
-            alt={intl.formatMessage(genericMessages.close)}
-            iconAs={Minus}
-            onClick={() => { setOpen(false); }}
-            size="sm"
-          />
-        )}
+      <div 
+        className="mb-2 bg-white border rounded-3 p-3 position-relative"
+        style={{
+          background: '#FFFFFF',
+          border: '1px solid #E8E8E8',
+          borderRadius: '8px'
+        }}
       >
-        <ol className="list-unstyled">
-          {sequenceIds.map((sequenceId, index) => (
-            <SequenceLink
-              key={sequenceId}
-              id={sequenceId}
-              sequence={sequences[sequenceId]}
-              first={index === 0}
-            />
-          ))}
-        </ol>
-      </Collapsible>
+        {/* Left Blue Accent Bar */}
+        <div 
+          className="position-absolute h-100"
+          style={{
+            left: 0,
+            top: 0,
+            width: '4px',
+            background: '#0D81FF',
+            borderTopLeftRadius: '8px',
+            borderBottomLeftRadius: '8px'
+          }}
+        ></div>
+        
+        {/* Content Container with Left Padding for Accent Bar */}
+        <div className="d-flex align-items-center" style={{ paddingLeft: '16px' }}>
+          {/* Circular Icon with Checkmark */}
+          
+          {/* Section Title */}
+          <div className="flex-grow-1">
+            <SectionTitle {...{ complete, hideFromTOC, title }} />
+          </div>
+          
+          {/* Right Plus Icon */}
+          <IconButton
+            alt={open ? intl.formatMessage(genericMessages.close) : intl.formatMessage(messages.openSection)}
+            iconAs={open ? Minus : Plus}
+            onClick={() => { setOpen(!open); }}
+            size="sm"
+            style={{
+              color: 'rgba(13, 129, 255, 1)'
+            }}
+          />
+        </div>
+        
+        {/* Section Content */}
+        {open && (
+          <div className="mt-3" style={{ paddingLeft: '16px' }}>
+            <ol className="list-unstyled">
+              {sequenceIds.map((sequenceId, index) => (
+                <SequenceLink
+                  key={sequenceId}
+                  id={sequenceId}
+                  sequence={sequences[sequenceId]}
+                  first={index === 0}
+                />
+              ))}
+            </ol>
+          </div>
+        )}
+      </div>
     </li>
   );
 };

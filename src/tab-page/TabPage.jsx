@@ -65,7 +65,7 @@ const TabPage = (props) => {
         </>
       )}
 
-      <HeaderSlot courseOrg={org} courseNumber={number} courseTitle={title} />
+      {/* <HeaderSlot courseOrg={org} courseNumber={number} courseTitle={title} /> */}
 
       {courseStatus === 'loading' && (
         <PageLoading srMessage={intl.formatMessage(messages.loading)} />
@@ -81,7 +81,7 @@ const TabPage = (props) => {
           {intl.formatMessage(messages.failure)}
         </p>
       )}
-      <FooterSlot />
+      {/* <FooterSlot /> */}
     </>
   );
 };

@@ -13,6 +13,7 @@ import { faNewspaper } from '@fortawesome/free-regular-svg-icons';
 import messages from '../messages';
 import { useModel } from '../../../generic/model-store';
 import LaunchCourseHomeTourButton from '../../../product-tours/newUserCourseHomeTour/LaunchCourseHomeTourButton';
+import BelesAIHelper from './BelesAIHelper';
 
 const CourseTools = () => {
   const intl = useIntl();
@@ -64,7 +65,8 @@ const CourseTools = () => {
 
   return (
     <section className="mb-4">
-      <h2 className="h4">{intl.formatMessage(messages.tools)}</h2>
+      <BelesAIHelper />
+      {/* <h2 className="h4">{intl.formatMessage(messages.tools)}</h2>
       <ul className="list-unstyled">
         {courseTools.map((courseTool) => (
           <li key={courseTool.analyticsId} className="small">
@@ -77,7 +79,7 @@ const CourseTools = () => {
         <li className="small" id="courseHome-launchTourLink">
           <LaunchCourseHomeTourButton />
         </li>
-      </ul>
+      </ul> */}
     </section>
   );
 };
