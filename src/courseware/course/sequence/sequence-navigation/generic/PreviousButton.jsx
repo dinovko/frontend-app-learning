@@ -10,12 +10,13 @@ import {
 import { isRtl, getLocale } from '@edx/frontend-platform/i18n';
 
 const PreviousButton = ({
-  onClick,
-  buttonLabel,
-  previousLink,
-  variant,
-  buttonStyle,
   isFirstUnit,
+  variant,
+  buttonLabel,
+  buttonStyle,
+  buttonCustomStyle,
+  onClick,
+  previousLink,
   isAtTop,
 }) => {
   const navigate = useNavigate();
@@ -59,6 +60,7 @@ const PreviousButton = ({
       as={disabled ? undefined : Link}
       to={disabled ? undefined : navLink}
       iconBefore={prevArrow}
+      style={buttonCustomStyle}
     >
       {buttonLabel}
     </Button>

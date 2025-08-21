@@ -24,13 +24,23 @@ const UnitNavigation = ({
   } = useSequenceNavigationMetadata(sequenceId, unitId);
 
   const renderPreviousButton = () => {
-    const buttonStyle = `previous-button ${isAtTop ? 'text-dark mr-3' : 'justify-content-center'}`;
+    const buttonStyle = `previous-button d-flex align-items-center justify-content-center px-4 py-3`;
+    const buttonCustomStyle = {
+      width: '126px',
+      height: '45px',
+      background: '#F5F5F7',
+      borderRadius: '16px',
+      padding: '16px 26px',
+      border: 'none',
+    };
+    
     return (
       <PreviousButton
         isFirstUnit={isFirstUnit}
         variant="outline-secondary"
         buttonLabel={intl.formatMessage(messages.previousButton)}
         buttonStyle={buttonStyle}
+        buttonCustomStyle={buttonCustomStyle}
         onClick={onClickPrevious}
         previousLink={previousLink}
         isAtTop={isAtTop}
@@ -43,7 +53,10 @@ const UnitNavigation = ({
     const buttonText = (isLastUnit && exitText) ? exitText : intl.formatMessage(messages.nextButton);
     const disabled = isLastUnit && !exitActive;
     const variant = 'outline-primary';
-    const buttonStyle = `next-button ${isAtTop ? 'text-dark' : 'justify-content-center'}`;
+    const buttonStyle = `next-button ${isAtTop ? 'text-white mr-3' : 'justify-content-center'} bg-dark text-white rounded`;
+    const buttonCustomStyle = {
+      borderRadius: '16px',
+    }
 
     if (isAtTop) {
       return (
@@ -51,6 +64,7 @@ const UnitNavigation = ({
           {...{
             variant,
             buttonStyle,
+            buttonCustomStyle,
             buttonText,
             disabled,
             sequenceId,
@@ -66,6 +80,7 @@ const UnitNavigation = ({
       <NextButton
         variant={variant}
         buttonStyle={buttonStyle}
+        buttonCustomStyle={buttonCustomStyle}
         onClickHandler={onClickNext}
         disabled={disabled}
         buttonText={buttonText}

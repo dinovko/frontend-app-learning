@@ -52,7 +52,14 @@ const CourseOutlineTray = () => {
   };
 
   const sidebarHeading = (
-    <div className="outline-sidebar-heading-wrapper sticky d-flex justify-content-between align-self-start align-items-center bg-light-200 p-2.5 pl-4">
+    <div 
+      className="outline-sidebar-heading-wrapper sticky d-flex justify-content-between align-self-start align-items-center bg-light-200 p-3 pl-4.5 mb-2"
+      style={{
+        height: '60px',
+        border: '1px solid rgba(232, 232, 232, 1)',
+        borderRadius: '8px',
+      }}
+    >
       {isDisplaySequenceLevel && backButtonTitle ? (
         <Button
           variant="link"

@@ -9,3 +9,7 @@ body.inline-link a {
 body.small {
     font-size: 0.875rem;
 }
+
+.field {
+    border: 1px solid #000 !important;
+}

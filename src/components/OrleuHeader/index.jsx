@@ -75,7 +75,7 @@ const OrleuHeader = () => {
       <div className="d-flex align-items-center justify-content-between px-3 mx-auto"
         style={{ maxWidth: '1400px', height: '100%' }}>
         <div className="d-flex align-items-center">
-          <div className="d-flex align-items-center justify-content-center text-white fw-bold border border-white border-opacity-10"
+          <div className="d-flex align-items-center justify-content-center text-white fw-bold border-opacity-10"
             style={{ width: '71.1px', height: '19.23px', fontSize: '16px' }}>
             ORLEU
           </div>

@@ -2,6 +2,7 @@
 
 @import "~@edx/frontend-component-footer/dist/footer";
 @import "~@edx/frontend-component-header/dist/index";
+@import './custom-overrides.scss';
 
 
 #root {
@@ -446,6 +447,14 @@
       margin-left: 0;
     }
   }
+}
+
+.wrapper-problem-response {
+  border: 2px solid red !important;
+}
+
+.problem {
+  border: 2px solid blue !important;
 }
 
 // Import component-specific sass files

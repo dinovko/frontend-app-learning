@@ -41,13 +41,16 @@ const SidebarSection = ({ section, handleSelectSection }) => {
   );
 
   return (
-    <li className="mb-2 course-sidebar-section">
+    <li className="mb-2 course-sidebar-section" style={{
+      background: '#FFFFFF',
+    }}>
       <Button
         variant="tertiary"
         className={classNames(
-          'd-flex align-items-center w-100 px-4 py-3.5 rounded-0 justify-content-start',
-          { 'bg-info-100': isActiveSection },
+          'd-flex align-items-center w-100 px-4 py-3.5 justify-content-start',
+          // { 'bg-info-100': isActiveSection },
         )}
+        style={{background: isActiveSection ? 'rgba(13, 129, 255, 1)' : '#FFFFFF',border: '1px solid #E8E8E8', borderRadius: '16px',}}
         onClick={() => handleSelectSection(id)}
       >
         {sectionTitle}

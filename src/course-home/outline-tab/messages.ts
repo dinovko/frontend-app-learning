@@ -127,7 +127,7 @@ const messages = defineMessages({
   },
   resumeBlurb: {
     id: 'learning.outline.resumeBlurb',
-    defaultMessage: 'Pick up where you left off',
+    defaultMessage: 'Начни свой курс сегодня',
     description: 'Text describing to the learner that they can return to the last section they visited within the course.',
   },
   resume: {

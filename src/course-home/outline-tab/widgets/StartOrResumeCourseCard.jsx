@@ -42,7 +42,7 @@ const StartOrResumeCourseCard = () => {
   };
 
   return (
-    <div className="mb-3 p-3 bg-light rounded-3 w-100" data-testid="start-resume-card" style={{
+    <div className="mb-3 p-3 rounded-3 w-100" data-testid="start-resume-card" style={{
       background: '#F5F5F7',
       borderRadius: '14px'
     }}>

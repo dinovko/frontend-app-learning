@@ -18,6 +18,11 @@ const Breadcrumbs = () => {
     org,
     title,
   } = useModel('courseHomeMeta', courseId);
+  
+  const { courseId: courseId2 } = useSelector(state => state.courseware);
+  const course = useSelector(state => state.models.courseHomeMeta);
+
+  console.log(course,courseId2);
 
   return (
     <div className="d-flex align-items-center justify-content-start gap-2 px-3"
@@ -28,7 +33,7 @@ const Breadcrumbs = () => {
             color: '#969696',
             fontSize: '16px',
             lineHeight: '100%',
-            fontFamily: 'Inter, sans-serif'
+            // fontFamily: 'Inter, sans-serif'
           }}>
           Главная
         </a>
@@ -39,7 +44,7 @@ const Breadcrumbs = () => {
             color: '#969696',
             fontSize: '16px',
             lineHeight: '100%',
-            fontFamily: 'Inter, sans-serif'
+            // fontFamily: 'Inter, sans-serif'
           }}>
           &gt;
         </span>
@@ -48,7 +53,7 @@ const Breadcrumbs = () => {
               color: '#969696',
               fontSize: '16px',
               lineHeight: '100%',
-              fontFamily: 'Inter, sans-serif'
+              // fontFamily: 'Inter, sans-serif' 
             }}>
             Мои курсы
         </a>
@@ -57,7 +62,7 @@ const Breadcrumbs = () => {
             color: '#969696',
             fontSize: '16px',
             lineHeight: '100%',
-            fontFamily: 'Inter, sans-serif'
+            // fontFamily: 'Inter, sans-serif' 
           }}>
           &gt;
         </span>
@@ -66,10 +71,10 @@ const Breadcrumbs = () => {
             color: 'rgba(0, 0, 0, 1)',
             fontSize: '16px',
             lineHeight: '100%',
-            fontFamily: 'Inter, sans-serif',
+            // fontFamily: 'Inter, sans-serif',
             fontWeight: '600',
           }}>
-          {title}
+          {course ? course[courseId2]?.title : title}
         </span>
       </div>
     </div>

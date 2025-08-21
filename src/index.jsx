@@ -142,6 +142,8 @@ subscribe(APP_READY, () => {
                       path={route}
                       element={(
                         <DecodePageRoute>
+                          <OrleuHeader />
+                          <Breadcrumbs />
                           <CoursewareContainer />
                         </DecodePageRoute>
                       )}
