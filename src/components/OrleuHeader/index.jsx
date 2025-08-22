@@ -86,7 +86,7 @@ const OrleuHeader = () => {
         </div>
         <div className="d-flex align-items-center position-relative" ref={dropdownRef}>
           <div
-            className="rounded-circle border border-white border-opacity-10 d-flex align-items-center justify-content-center cursor-pointer overflow-hidden mr-2"
+            className="rounded-circle border border-white border-opacity-10 d-flex align-items-center justify-content-center cursor-pointer overflow-hidden mr-3"
             style={{ width: '30px', height: '30px' }}
           >
             <img
