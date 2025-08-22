@@ -1,0 +1,44 @@
+// Footer styles
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(0deg, #15171E, #15171E), #F6F6F6 !important;
+  
+  // Убираем mt-auto так как используем fixed positioning
+  &.mt-auto {
+    margin-top: 0;
+  }
+}
+
+// Для полноэкранного layout с footer внизу
+body {
+  min-height: 100vh;
+  padding-bottom: 120px; // Добавляем отступ снизу для контента
+}
+
+// Основной контент должен занимать доступное пространство
+main {
+  flex: 1;
+}
+
+// Адаптивные стили для мобильных устройств
+@media (max-width: 768px) {
+  .footer {
+    .container-fluid {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    
+    .text-md-end {
+      text-align: center !important;
+    }
+  }
+  
+  body {
+    padding-bottom: 140px; // Больше отступа на мобильных
+  }
+}

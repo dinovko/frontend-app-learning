@@ -38,6 +38,7 @@ import PreferencesUnsubscribe from './preferences-unsubscribe';
 import PageNotFound from './generic/PageNotFound';
 import OrleuHeader from './components/OrleuHeader';
 import Breadcrumbs from './components/Breadcrumbs';
+import OrleuFooter from './components/OrleuFooter';
 
 subscribe(APP_READY, () => {
   const root = createRoot(document.getElementById('root'));
@@ -75,6 +76,7 @@ subscribe(APP_READY, () => {
                         <TabContainer tab="outline" fetch={fetchOutlineTab} slice="courseHome">
                           <OutlineTab />
                         </TabContainer>
+                        <OrleuFooter />
                       </DecodePageRoute>
                     )}
                   />
@@ -145,6 +147,7 @@ subscribe(APP_READY, () => {
                           <OrleuHeader />
                           <Breadcrumbs />
                           <CoursewareContainer />
+                          <OrleuFooter />
                         </DecodePageRoute>
                       )}
                     />
