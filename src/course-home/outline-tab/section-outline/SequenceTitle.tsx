@@ -50,8 +50,8 @@ const SequenceTitle: React.FC<Props> = ({
         )}
       </div>
       <div className="col-10 p-0 ml-3 text-break">
-        <span className="align-middle">{displayTitle}</span>
-        <span className="sr-only">
+        <span className="align-middle" >{displayTitle}</span>
+        <span className="sr-only" style={{ fontFamily: 'var(--pgn-typography-font-family-base)' }}>
           , {intl.formatMessage(complete ? messages.completedAssignment : messages.incompleteAssignment)}
         </span>
         <EffortEstimate className="ml-3 align-middle" block={sequence} />

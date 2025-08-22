@@ -2,8 +2,13 @@ import React from 'react';
 import { getConfig } from '@edx/frontend-platform';
 import { useSelector } from 'react-redux';
 import { useModel } from '../../generic/model-store';
+import { useIntl } from '@edx/frontend-platform/i18n';
+import messages from '../../courseware/course/course-exit/messages';
+import messages2 from '../../course-home/goal-unsubscribe/messages';
 
 const Breadcrumbs = () => {
+  const intl = useIntl();
+
   const LMS_BASE_URL = `${getConfig().LMS_BASE_URL}/dashboard`;
 
   const BASE_URL = `${window.location.protocol}//${window.location.host}`;
@@ -22,8 +27,6 @@ const Breadcrumbs = () => {
   const { courseId: courseId2 } = useSelector(state => state.courseware);
   const course = useSelector(state => state.models.courseHomeMeta);
 
-  console.log(course,courseId2);
-
   return (
     <div className="d-flex align-items-center justify-content-start gap-2 px-3"
       style={{ maxWidth: '1400px', width: '100%', paddingTop: '22px', paddingBottom: '22px', gap: '8px', margin: '0 auto' }}>
@@ -35,7 +38,7 @@ const Breadcrumbs = () => {
             lineHeight: '100%',
             // fontFamily: 'Inter, sans-serif'
           }}>
-          Главная
+          {intl.formatMessage(messages2.goToDashboard)}
         </a>
 
         {/* Chevron separator */}
@@ -55,7 +58,7 @@ const Breadcrumbs = () => {
               lineHeight: '100%',
               // fontFamily: 'Inter, sans-serif' 
             }}>
-            Мои курсы
+            {intl.formatMessage(messages.viewCoursesButton)}
         </a>
         <span className="fw-semibold"
           style={{

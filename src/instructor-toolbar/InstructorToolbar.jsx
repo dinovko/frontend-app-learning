@@ -70,7 +70,7 @@ const InstructorToolbar = (props) => {
 
   return (!didMount ? null : (
     <div data-testid="instructor-toolbar">
-      <div className="bg-primary text-white">
+      <div className="text-white" style={{ maxWidth: '1400px', margin: '0 auto', background: 'linear-gradient(0deg, rgb(13, 129, 255), rgb(13, 129, 255)), rgb(48, 51, 64)', borderRadius: '14px' }}>
         <div className="container-xl py-3 d-md-flex justify-content-end align-items-start">
           <div className="align-items-center flex-grow-1 d-md-flex mx-1 my-1">
             <MasqueradeWidget courseId={courseId} onError={showMasqueradeError} />

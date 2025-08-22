@@ -32,6 +32,8 @@ const LoadedTabPage = ({
     hasCourseAuthorAccess,
   } = useModel('courseHomeMeta', courseId);
 
+  console.info('loaded tab page',children)
+
   // Logistration and enrollment alerts are only really used for the outline tab, but loaded here to put them above
   // breadcrumbs when they are visible.
   const logistrationAlert = useLogistrationAlert(courseId);
@@ -80,7 +82,7 @@ const LoadedTabPage = ({
             ...logistrationAlert,
           }}
         />
-        {/* <CourseTabsNavigation tabs={tabs} className="mb-3" activeTabSlug={activeTabSlug} /> */}
+        <CourseTabsNavigation tabs={tabs} className="mb-3" activeTabSlug={activeTabSlug} />
         <div id="main-content" className="container-xl">
           {children}
         </div>

@@ -38,10 +38,6 @@ const SectionTitle: React.FC<Props> = ({ complete, hideFromTOC, title }) => {
         <span 
           className="align-middle col-6"
           style={{
-            fontFamily: 'Inter',
-            fontWeight: 600,
-            fontStyle: 'normal',
-            fontSize: '18px',
             lineHeight: '100%',
             letterSpacing: '0%',
             color: 'rgba(0, 0, 0, 1)'

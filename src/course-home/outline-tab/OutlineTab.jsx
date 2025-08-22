@@ -134,6 +134,14 @@ const OutlineTab = () => {
           />
         </div>
         <div className="col col-12 col-md-8">
+          {isSelfPaced && hasDeadlines && (
+            <>
+              <ShiftDatesAlert model="outline" fetch={fetchOutlineTab} />
+              <UpgradeToShiftDatesAlert model="outline" logUpgradeLinkClick={logUpgradeToShiftDatesLinkClick} />
+            </>
+          )}
+          <StartOrResumeCourseCard />
+          <WelcomeMessage courseId={courseId} nextElementRef={expandButtonRef} />
           <AlertList
             topic="outline-course-alerts"
             className="mb-3"
@@ -144,14 +152,6 @@ const OutlineTab = () => {
               ...scheduledContentAlert,
             }}
           />
-          {isSelfPaced && hasDeadlines && (
-            <>
-              <ShiftDatesAlert model="outline" fetch={fetchOutlineTab} />
-              <UpgradeToShiftDatesAlert model="outline" logUpgradeLinkClick={logUpgradeToShiftDatesLinkClick} />
-            </>
-          )}
-          <StartOrResumeCourseCard />
-          <WelcomeMessage courseId={courseId} nextElementRef={expandButtonRef} />
           {rootCourseId && (
             <>
               <div id="expand-button-row" className="row w-100 m-0 mb-3 justify-content-end">
@@ -164,7 +164,6 @@ const OutlineTab = () => {
                       background: '#F5F5F7',
                       border: '1px solid #E8E8E8',
                       borderRadius: '6px',
-                      fontFamily: 'Inter',
                       fontWeight: 600,
                       fontSize: '14px',
                       lineHeight: '17px',

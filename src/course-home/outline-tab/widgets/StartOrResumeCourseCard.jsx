@@ -49,7 +49,6 @@ const StartOrResumeCourseCard = () => {
       <div className="d-flex justify-content-between align-items-center">
         <div className="flex-grow-1">
           <h5 className="mb-0 ml-2 fw-semibold" style={{
-            fontFamily: 'Inter',
             fontSize: '16px',
             lineHeight: '100%',
             letterSpacing: '0%'
@@ -64,7 +63,6 @@ const StartOrResumeCourseCard = () => {
             style={{
               background: 'linear-gradient(0deg, #0D81FF, #0D81FF), #303340',
               borderRadius: '8px',
-              fontFamily: 'Inter',
               fontWeight: 600,
               fontSize: '16px',
               lineHeight: '19px',
