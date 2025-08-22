@@ -14,7 +14,7 @@ interface Props {
 const SectionTitle: React.FC<Props> = ({ complete, hideFromTOC, title }) => {
   const intl = useIntl();
   return (
-    <div className="d-flex row w-100 m-0">
+    <div className="d-flex row w-100 m-0 cursor-pointer">
       <div className="col-auto p-0">
         {complete ? (
           <Icon
@@ -34,9 +34,9 @@ const SectionTitle: React.FC<Props> = ({ complete, hideFromTOC, title }) => {
           />
         )}
       </div>
-      <div className="col-7 ml-3 p-0 font-weight-bold text-dark-500">
+      <div className="col-7 ml-3 p-0 font-weight-bold text-dark-500 cursor-pointer">
         <span 
-          className="align-middle col-6"
+          className="align-middle col-6 cursor-pointer"
           style={{
             lineHeight: '100%',
             letterSpacing: '0%',

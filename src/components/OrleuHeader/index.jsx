@@ -81,7 +81,9 @@ const OrleuHeader = () => {
             style={{ width: '71.1px', height: '19.23px', fontSize: '16px', backgroundImage: `url(${defaultLogoWhite})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}>
           </div>
         </div>
-        <LanguageSwitcher  />
+        <div className="d-flex align-items-end justify-content-end ms-auto me-5 w-100 mr-5">
+          <LanguageSwitcher />
+        </div>
         <div className="d-flex align-items-center position-relative" ref={dropdownRef}>
           <div
             className="rounded-circle border border-white border-opacity-10 d-flex align-items-center justify-content-center cursor-pointer overflow-hidden mr-2"

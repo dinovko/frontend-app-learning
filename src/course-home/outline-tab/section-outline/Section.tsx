@@ -75,11 +75,11 @@ const Section: React.FC<Props> = ({
         ></div>
         
         {/* Content Container with Left Padding for Accent Bar */}
-        <div className="d-flex align-items-center" style={{ paddingLeft: '16px' }}>
+        <div className="d-flex align-items-center cursor-pointer" style={{ paddingLeft: '16px' }}>
           {/* Circular Icon with Checkmark */}
           
           {/* Section Title */}
-          <div className="flex-grow-1">
+          <div className="flex-grow-1 cursor-pointer" onClick={() => { setOpen(!open); }}>
             <SectionTitle {...{ complete, hideFromTOC, title }} />
           </div>
           

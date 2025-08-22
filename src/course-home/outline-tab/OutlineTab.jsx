@@ -174,8 +174,7 @@ const OutlineTab = () => {
                     onClick={() => { setExpandAll(!expandAll); }}
                   >
                     <span className="me-2">
-                      {/* {expandAll ? intl.formatMessage(messages.collapseAll) : intl.formatMessage(messages.expandAll)} */}
-                      {expandAll ? 'Свернуть все' : 'Развернуть все'}
+                      {expandAll ? intl.formatMessage(messages.collapseAll) : intl.formatMessage(messages.expandAll)}
                     </span>
                     <div 
                       className="d-flex align-items-center justify-content-center"
