@@ -1,5 +1,9 @@
 {
     "learn.navigation.course.tabs.label": "Курс материалы",
+    "learn.tabs.outline": "Курс",
+    "learn.tabs.progress": "Ілгерілеу",
+    "learn.tabs.dates": "Күндер",
+    "learn.tabs.teams": "Топтар",
     "learn.redirect.interstitial.message": "Қайта бағытталуда...",
     "learn.loading.error": "Қате: {error}",
     "general.altText.close": "Жабу",

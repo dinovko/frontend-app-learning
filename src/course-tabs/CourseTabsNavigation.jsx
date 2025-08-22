@@ -14,6 +14,21 @@ const CourseTabsNavigation = ({
   const intl = useIntl();
   const { show } = useCoursewareSearchState();
 
+  const getLocalizedTabTitle = (slug, fallbackTitle) => {
+    switch (slug) {
+      case 'outline':
+        return intl.formatMessage(messages.tabOutline);
+      case 'progress':
+        return intl.formatMessage(messages.tabProgress);
+      case 'dates':
+        return intl.formatMessage(messages.tabDates);
+      case 'teams':
+        return intl.formatMessage(messages.tabTeams);
+      default:
+        return fallbackTitle;
+    }
+  };
+
   return (
     <div id="courseTabsNavigation" className={classNames('course-tabs-navigation', className)}>
       <div className="container-xl">
@@ -29,7 +44,7 @@ const CourseTabsNavigation = ({
                   className={classNames('nav-item flex-shrink-0 nav-link', { active: slug === activeTabSlug })}
                   href={url}
                 >
-                  {title}
+                  {getLocalizedTabTitle(slug, title)}
                 </a>
               ))}
             </Tabs>

@@ -1,5 +1,9 @@
 {
   "learn.navigation.course.tabs.label": "Материалы курса",
+  "learn.tabs.outline": "Курс",
+  "learn.tabs.progress": "Прогресс",
+  "learn.tabs.dates": "Даты",
+  "learn.tabs.teams": "Команды",
   "learn.redirect.interstitial.message": "Перенаправление...",
   "learn.loading.error": "Ошибка: {error}",
   "general.altText.close": "Закрыть",
