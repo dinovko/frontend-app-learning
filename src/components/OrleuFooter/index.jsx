@@ -23,27 +23,27 @@ const messages = defineMessages({
 });
 
 const OrleuFooter = () => {
-  
+
 
   return (
-         <footer className="footer py-4 bg-dark text-white">
+    <footer className="footer py-4 bg-dark text-white">
       <div className="container-fluid">
-                 <div className="row align-items-center">
-           <div className="text-center mb-3 d-flex justify-content-center gap-3 w-100" style={{ gap: '16px' }}>
-             <img 
-               src={nationalBankLogo} 
-               alt="Orleu Logo" 
-               className="img-fluid"
-               style={{ maxHeight: '40px' }}
-             />
-             <img 
-               src={defaultLogoWhite} 
-               alt="Orleu Logo" 
-               className="img-fluid"
-               style={{ maxHeight: '40px' }}
-             />
-           </div>
-         </div>
+        <div className="row align-items-center">
+          <div className="text-center mb-3 d-flex justify-content-center gap-3 w-100" style={{ gap: '16px' }}>
+            <img
+              src={nationalBankLogo}
+              alt="Orleu Logo"
+              className="img-fluid"
+              style={{ maxHeight: '40px' }}
+            />
+            <img
+              src={defaultLogoWhite}
+              alt="Orleu Logo"
+              className="img-fluid"
+              style={{ maxHeight: '40px' }}
+            />
+          </div>
+        </div>
         <hr className="my-3 bg-secondary" />
         <div className="row">
           <div className="col-12 text-center">
