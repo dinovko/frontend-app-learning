@@ -114,7 +114,7 @@ const Course = ({
         unitNavigationHandler={unitNavigationHandler}
         nextSequenceHandler={nextSequenceHandler}
         previousSequenceHandler={previousSequenceHandler}
-      />
+        />
       <CelebrationModal
         courseId={courseId}
         isOpen={firstSectionCelebrationOpen}

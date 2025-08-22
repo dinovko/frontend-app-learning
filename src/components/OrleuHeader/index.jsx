@@ -37,7 +37,7 @@ const OrleuHeader = () => {
 
   const DASHBOARD_URL = `${getConfig().LMS_BASE_URL}/dashboard`;
   const LOGOUT_URL = getConfig().LOGOUT_URL;
-  const ACCOUNT_PROFILE_URL = getConfig().ACCOUNT_PROFILE_URL;
+  const ACCOUNT_PROFILE_URL = `${getConfig().ACCOUNT_PROFILE_URL}/u/${currentUser}`;
   const ACCOUNT_SETTINGS_URL = getConfig().ACCOUNT_SETTINGS_URL;
 
   async function getCurrentUser() {
@@ -83,9 +83,8 @@ const OrleuHeader = () => {
 
         <div className="d-flex align-items-center position-relative" ref={dropdownRef}>
           <div
-            className="rounded-circle border border-white border-opacity-10 d-flex align-items-center justify-content-center cursor-pointer overflow-hidden"
+            className="rounded-circle border border-white border-opacity-10 d-flex align-items-center justify-content-center cursor-pointer overflow-hidden mr-2"
             style={{ width: '30px', height: '30px' }}
-            onClick={toggleDropdown}
           >
             <img
               src={defaultProfile}
@@ -94,14 +93,14 @@ const OrleuHeader = () => {
               style={{ objectFit: 'cover' }}
             />
           </div>
-          <div className="d-flex flex-column justify-content-between ml-2"
-            style={{ width: '14px', height: '12px' }}>
-            <div className="bg-white border border-white border-opacity-10"
-              style={{ width: '2px', height: '14px', transform: 'rotate(90deg)' }}></div>
-            <div className="bg-white border border-white border-opacity-10"
-              style={{ width: '2px', height: '14px', transform: 'rotate(90deg)' }}></div>
-            <div className="bg-white border border-white border-opacity-10"
-              style={{ width: '2px', height: '14px', transform: 'rotate(90deg)' }}></div>
+          <div className="d-flex flex-column justify-content-between ml-2 position-relative mb-2"
+            style={{ width: '14px', height: '12px' }} onClick={toggleDropdown}>
+            <div className="bg-white border border-white border-opacity-10 position-absolute"
+              style={{ width: '2px', height: '14px', top: '0px', left: '0px', transform: 'rotate(90deg)' }}></div>
+            <div className="bg-white border border-white border-opacity-10 position-absolute"
+              style={{ width: '2px', height: '14px', top: '5px', left: '0px', transform: 'rotate(90deg)' }}></div>
+            <div className="bg-white border border-white border-opacity-10 position-absolute"
+              style={{ width: '2px', height: '14px', top: '10px', left: '0px', transform: 'rotate(90deg)' }}></div>
           </div>
 
           {/* Dropdown Menu */}
@@ -112,9 +111,6 @@ const OrleuHeader = () => {
                 <div className="text-white fw-bold">{currentUser}</div>
               </div>
               <div className="py-2">
-                <a href={DASHBOARD_URL} className="d-block px-3 py-2 text-white text-decoration-none hover-bg-secondary">
-                  {intl.formatMessage(messages.dashboard)}
-                </a>
                 <a href={ACCOUNT_PROFILE_URL} className="d-block px-3 py-2 text-white text-decoration-none hover-bg-secondary">
                   {intl.formatMessage(messages.profile)}
                 </a>
